@@ -64,10 +64,4 @@ function brainfuckInterpreter(program, stdin) {
 
     return output;
 }
-
-let program = ",[.[-],]"
-let stdin = 'Hello ZHENING'
-let output = brainfuckInterpreter(program, stdin);
-console.log(output);
-
 module.exports = {brainfuckInterpreter}

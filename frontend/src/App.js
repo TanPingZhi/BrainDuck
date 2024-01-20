@@ -51,12 +51,61 @@ function App() {
 			setLoading(false);
 		})
 	}
+	function checkQuackPairs(userCode) {
+		// Regex pattern: Looks for 'Quack' followed immediately by a punctuation mark (.,!,?)
+		const regex = /Quack[.!?]/g;
 
-	function sound() {
+		// Extract all occurrences of 'Quack' followed immediately by a punctuation
+		const matches = userCode.match(regex);
 
-		var audio = new Audio('/voices/DonaldTrump/Quack_Exclaim.mp3');
-		audio.play();
+		// Check if every 'Quack' is followed immediately by a punctuation
+		// and the total count of such pairs is half the count of 'Quack' in the string
+		const quackCount = (userCode.match(/Quack/g) || []).length;
+		console.log("matches", matches);
+		console.log("quackCount", quackCount);
+		return matches.length == userCode.match(/\S+/g).length &&
+			matches.length % 2 === 0;
 	}
+	function playAudio(src) {
+		return new Promise(resolve => {
+			let audio = new Audio(src);
+			audio.play();
+			audio.onended = resolve;
+		});
+	}
+
+	async function sound() {
+		if (checkQuackPairs(userCode)) {
+			console.log("Valid Quack pairs");
+			const regex = /Quack[.!?]/g;
+			const quacks = userCode.match(regex) || [];
+
+			for (const quack of quacks) {
+				switch (quack[quack.length - 1]) {
+					case '.':
+						console.log("Quack");
+						await playAudio('/voices/DonaldTrump/Quack_Normal.mp3');
+						break;
+					case '!':
+						console.log("Quack");
+						await playAudio('/voices/DonaldTrump/Quack_Exclaim.mp3');
+						break;
+					case '?':
+						console.log("Quack");
+						await playAudio('/voices/DonaldTrump/Quack_Question.mp3');
+						break;
+					default:
+						// This should not happen
+						break;
+				}
+			}
+		} else {
+			console.log("Invalid Quack pairs");
+		}
+	}
+
+
+
 
 	// Function to clear the output screen
 	function clearOutput() {
