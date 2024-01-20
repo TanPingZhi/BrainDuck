@@ -8,7 +8,7 @@ import spinner from './spinner.svg';
 function App() {
 
 	// State variable to set users source code
-	const [userCode, setUserCode] = useState(``);
+  const [userCode, setUserCode] = useState("Quack. Quack! Quack! Quack? Quack! Quack. Quack! Quack? Quack! Quack! Quack? Quack! Quack. Quack! Quack? Quack!");
 
 	// State variable to set editors default language
 	const [userLang, setUserLang] = useState("python");
@@ -41,12 +41,12 @@ function App() {
 		}
 
 		// Post request to compile endpoint
-		Axios.post(`http://localhost:8000/compile`, {
+		Axios.post(`http://localhost:8000/run`, {
 			code: userCode,
 			language: userLang,
 			input: userInput
 		}).then((res) => {
-			setUserOutput(res.data.output);
+			setUserOutput(res.data);
 		}).then(() => {
 			setLoading(false);
 		})
