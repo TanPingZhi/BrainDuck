@@ -1,4 +1,5 @@
 const express = require('express');
+const { brainfuckInterpreter } = require('./BrainfuckInterpreter');
 const app = express();
 
 // Middleware to parse JSON bodies
@@ -11,6 +12,7 @@ app.get('/', (req, res) => {
 app.post('/run', (req, res) => {
     // Accessing the 'code' field from the parsed JSON request body
     const code = req.body.code;
+    console.log(brainfuckInterpreter(",[.[-],]", "Your input here"))
     res.send(code.toString());
 });
 
