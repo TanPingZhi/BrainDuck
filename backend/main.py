@@ -5,7 +5,7 @@ import sys
 if __name__ == "__main__":
 
     if len(sys.argv) != 2:
-        print("Usage: python main.py <user_input>")
+        print("Usage: python brainQuack_to_Brainfuck.py <user_input>")
         sys.exit(1)
 
     user_input = sys.argv[1]
