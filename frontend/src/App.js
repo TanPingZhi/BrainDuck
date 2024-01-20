@@ -53,8 +53,9 @@ function App() {
 	}
 
 	function sound() {
-		// var audio = new Audio('audio_file.mp3');
-		// audio.play();
+
+		var audio = new Audio('/voices/DonaldTrump/Quack_Exclaim.mp3');
+		audio.play();
 	}
 
 	// Function to clear the output screen
