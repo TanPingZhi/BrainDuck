@@ -52,6 +52,11 @@ function App() {
 		})
 	}
 
+	function sound() {
+		// var audio = new Audio('audio_file.mp3');
+		// audio.play();
+	}
+
 	// Function to clear the output screen
 	function clearOutput() {
 		setUserOutput("");
@@ -78,6 +83,9 @@ function App() {
 					/>
 					<button className="run-btn" onClick={() => compile()}>
 						Run
+					</button>
+					<button className="sound-btn" onClick={() => sound()}>
+						<img src={"/sound.png"} width="35" height="40"/>
 					</button>
 				</div>
 				<div className="right-container">

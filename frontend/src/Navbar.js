@@ -16,13 +16,14 @@ const Navbar = ({ userLang, setUserLang, userTheme,
 	]
 	return (
 		<div className="navbar">
+			<img src={"/pixel_duck.png"} width="35" height="40" />
 			<h1>BrainDuck</h1>
-			<Select options={languages} value={userLang}
+			{/* <Select options={languages} value={userLang}
 				onChange={(e) => setUserLang(e.value)}
-				placeholder={userLang} />
-			<Select options={themes} value={userTheme}
+				placeholder={userLang} /> */}
+			{/* <Select options={themes} value={userTheme}
 				onChange={(e) => setUserTheme(e.value)}
-				placeholder={userTheme} />
+				placeholder={userTheme} />  */}
 			<label>Font Size</label>
 			<input type="range" min="18" max="30"
 				value={fontSize} step="2"

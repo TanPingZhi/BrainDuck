@@ -4,8 +4,8 @@
 	padding-left: 20px;
 	height: 50px;
 	text-align: center;
-	color: #ff8000;
-	background-color: #ffbf00;
+	color: #ffffff;
+	background-color: #ff9800;
 	gap: 20px;
 }
 
@@ -32,4 +32,14 @@
 .css-yk16xz-control {
 	background-color: #474747 !important;
 	border-color: #afec3f !important;
+}
+
+.css-b62m3t-container {
+	color: black;
+	border: none;
+}
+
+.css-t3ipsp-control {
+	background-color: #474747;
+	color: #afec3f;
 }
