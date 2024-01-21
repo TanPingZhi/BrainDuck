@@ -2,7 +2,7 @@
 
 ## Introduction
 BrainDuck is a project for [Hack&Roll 2024](https://hacknroll.nushackers.org/) that interprets BrainQuack, a unique programming language inspired by Brainfuck. 
-This serves absolutely no purpose and is purely for fun.
+This serves absolutely no ducking purpose and is purely for fun.
 
 Hackathon writeup at https://devpost.com/software/brainduck
 
@@ -10,6 +10,7 @@ Hackathon writeup at https://devpost.com/software/brainduck
 - **BrainQuack to Brainfuck Interpreter**: Converts BrainQuack code to Brainfuck, enabling users to write code in an amusing duck-themed syntax.
 - **Brainfuck Interpreter**: A robust interpreter for Brainfuck, allowing execution of Brainfuck code.
 - **Web Interface**: A user-friendly web interface for coding and executing BrainQuack and Brainfuck programs.
+- **Funny voice**: AI generated voice of Donald Trump to speak the code.
 
 ## Components
 1. **Backend**:
@@ -34,7 +35,6 @@ Hackathon writeup at https://devpost.com/software/brainduck
 ## Usage
 - Write BrainQuack code in the web interface.
 - Run the code and view the output instantly.
-- Get to hear Donald Trump quack (more voices would have been added but there was insufficient time).
 
 ## Examples
 - `donald_duck_example.txt`: An example of BrainQuack code.
