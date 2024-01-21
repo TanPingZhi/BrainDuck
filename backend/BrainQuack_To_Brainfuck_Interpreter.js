@@ -247,7 +247,28 @@ function brainQuack_To_Brainfuck_Interpreter(contents) {
         }
     }
 
-    return ["BRAINFUCK", output.join('')];
+    const stack = [];
+
+    const bracketsMap = {
+      '[': ']',
+    };
+    
+    for (let char of output) {
+        if (bracketsMap[char]) {
+            stack.push(char);
+        }
+        else if (char === ']') {
+            const lastBracket = stack.pop();
+            if (bracketsMap[lastBracket] !== char) {
+                return ["ERROR", `[line -] Error: ']' expected after expression.`];
+            }
+        }
+    }
+
+    if (stack.length === 0) {
+        return ["BRAINFUCK", output.join('')];
+    }
+    return ["ERROR", `[line -] Error: ']' expected after expression.`]
 }
 
 module.exports = {brainQuack_To_Brainfuck_Interpreter}
